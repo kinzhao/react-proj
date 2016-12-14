@@ -1,0 +1,301 @@
+.container {
+    text-align: center;
+}
+
+//Override Bootstrap CSS
+nav.navbar.navbar-default.navbar-white {
+	margin-bottom: 0px;
+	border-radius: 0px;
+}
+.navbar-white {
+	background-color: #fff;
+}
+.navbar-default .navbar-brand {
+	color: #4584e3;
+	font-weight: 600;
+}
+.navbar-toggle {
+	float: left;
+	margin-left: 15px;
+}
+.footer {
+    font-size: 30px;
+    text-align: center;
+}
+.infoIcon {
+    width: 5%;
+    margin: 3%;
+}
+.productImg img {
+    width: 100px;
+}
+img.thumbs {
+    width: 30%;
+}
+.plusMinus div {
+    float: left;
+    margin: 0 8px;
+}
+.input-group .snack-url-input {
+    margin: 20px 0;
+    width: 500px;
+}
+
+.container-fluid {
+    margin-left: 0!important;
+    padding-left: 0!important;
+}
+.navbar-header {
+    border-bottom: solid 3px #40f6aa;
+}
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+.nav-space {
+	margin-top: 160px;
+}
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 18%;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background-color: #4584e3;
+    border-color: #4584e3;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 60px;
+    height: 65px;
+    font-size: 18px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border: 0px solid white;
+    border-bottom-width: 1px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    // background: rgba(255,255,255,0.2);
+    background: #224271;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 18%;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+div.pac {
+    width: 140px;
+    height: 140px;
+    background: #ffee00;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    -moz-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+}
+div.line {
+    border: solid 1px black;
+    position: absolute;
+    top: 76px;
+    width: 74px;
+    left: 66px;
+    display: none;
+}
+div.pacContainer{
+    float: left;
+    margin: 10px 61px 10px 0;
+    position: relative;
+    min-width: 100px;
+}
+div.pacMouth {
+    width: 100px;
+    height: 190px;
+    background: #ffffff;
+    -webkit-clip-path: polygon(100% 36%, 0 66%, 100% 96%);
+    -moz-clip-path: polygon(100% 36%, 0 66%, 100% 96%);
+    clip-path: polygon(100% 36%, 0 66%, 100% 96%);
+    position: absolute;
+    top: -37px;
+    left: 55px;
+}
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: #4584e3;
+}
+a.navbar-brand{
+    color: #4584e3!important;
+    font-size: 35px;
+    margin-top: 6%;
+}
+.totalFunds {
+    float: right;
+    background-color: #4584e3;
+    padding: 8px 2%;
+    color: #f2a9fc;
+    font-size: 20px;
+    width: 30%;
+    position: relative;
+    height: 135px;
+    text-align: center;
+    margin-top: 25px;
+    margin-right: 35px;
+}
+
+th:after {
+    content: '▼';
+    font-size: 10px;
+}
+
+.container-fluid {
+    background-color: #fff;
+}
+.navbar-header {
+    width: 100%;
+}
+div.eye {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    -moz-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: absolute;
+    top: 35px;
+    left: 94px;
+    z-index: 99999;
+}
+span.funds {
+    color: #3af8b2;
+}
+
+img.hipCon {
+    width: 17%;
+    float: left;
+    border-radius: 50px;
+}
+
+span.fundsText {
+    font-size: 13px;
+    float: left;
+    display: block;
+    width: 75%;
+    margin-left: 10px;
+}
+
+div.pacSnack {
+    width: 15px;
+    height: 15px;
+    background: #ffee00;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    -moz-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+    top: 81px;
+    left: 110px;
+    z-index: 99999;
+    float: left;
+    margin-right: 65px;
+}
+.page-header {
+	text-align: left;
+}
+table#dataHeader {
+    clear: both;
+}

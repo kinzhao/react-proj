@@ -1,0 +1,103 @@
+db test
+<br> Username
+<input class="input-email" type="text" placeholder="Email" /> Password
+<input class="input-password" type="text" placeholder="Password" />
+<button class="button-sign-in">Sign In</button>
+<div class="welcome-message"></div>
+<script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+<script>
+// USAGE
+
+// addSnack('Pretzels', 'target.com/pretzels', 'path/to/img2')
+
+// getSnacks().then(function(snackRecords) {
+//   var snacks = []
+//   for (snack in snackRecords) {
+//     snackList.push(snackRecords[snack])
+//   }
+//   console.log(snacks)
+// })
+
+var config = {
+    apiKey: "AIzaSyC-F4yrHrSmag_yB9X8qtEKgq53HQP90T0",
+    authDomain: "appone-81518.firebaseapp.com",
+    databaseURL: "https://appone-81518.firebaseio.com",
+    storageBucket: "appone-81518.appspot.com",
+    messagingSenderId: "719732206018"
+};
+
+firebase.initializeApp(config);
+
+var db = firebase.database();
+
+document.querySelector('.button-sign-in').addEventListener('click', handleSignInButton)
+
+function handleSignInButton() {
+    var email = document.querySelector('.input-email').value;
+    var password = document.querySelector('.input-password').value;
+
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+        } else {
+            alert(errorMessage);
+        }
+
+        console.log(error);
+    });
+
+}
+
+firebase.auth().onAuthStateChanged(function(user) {
+
+    if (user) {
+        var displayName = user.displayName;
+        var email = user.email;
+        var emailVerified = user.emailVerified;
+        var photoURL = user.photoURL;
+        var isAnonymous = user.isAnonymous;
+        var uid = user.uid;
+        var providerData = user.providerData;
+        document.querySelector('.welcome-message').innerHTML = 'Welcome!'
+    }
+});
+
+function addSnack(name, imageUrl, price, sourceUrl) {
+    var newSnackKey = firebase.database().ref().child('snacks').push().key
+
+    firebase.database().ref('snacks/' + newSnackKey).set({
+        name: name,
+        sourceUrl: sourceUrl,
+        price: price,
+        imageUrl: imageUrl,
+        thumbsUp: 0,
+        thumbsDown: 0,
+        inCart: true,
+        timesOrdered: 0
+    })
+}
+
+function getSnacks() {
+    return db.ref('snacks/').once('value').then(function(snapshot) {
+        return snapshot.val()
+    })
+}
+
+function addReview(snackId, userId, body) {
+    var newReviewKey = firebase.database().ref().child('reviews').push().key
+
+    firebase.database().ref('reviews/' + snackId).set({
+        userId: userId,
+        body: body
+    })
+}
+
+function getReviews(snackId) {
+    return db.ref('reviews/' + snackId).once('value').then(function(snapshot) {
+        return snapshot.val()
+    })
+}
+</script>
