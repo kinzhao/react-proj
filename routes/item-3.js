@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function (req, res, next) {
-    res.render('all-snacks');
+    res.render('item-3');
 });
 
 // React initial page load POST request

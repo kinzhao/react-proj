@@ -8,12 +8,12 @@ var bodyParser = require('body-parser');
 var handlebars   = require('express-handlebars');
 var app = express();
 
-var homepage = require('./routes/home');
-var cart = require('./routes/cart');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
-var allSnacks = require('./routes/all-snacks');
-var adminBoard = require('./routes/admin-board');
+var home = require('./routes/home');
+var item1 = require('./routes/item-1');
+var item2 = require('./routes/item-2');
+var item3 = require('./routes/item-3');
 
 var hbs = handlebars.create({
     extname: 'html',
@@ -61,12 +61,12 @@ app.use(function(req, res, next) {
 	next();
 });
 
-app.use('/', homepage);
-app.use('/cart', cart);
 app.use('/login', login);
 app.use('/logout', logout);
-app.use('/all-snacks', allSnacks);
-app.use('/admin-board', adminBoard);
+app.use('/home', home);
+app.use('/item-1', item1);
+app.use('/item-2', item2);
+app.use('/item-3', item3);
 app.get('/healthcheck', function (req, res, next) {
     res.send('healthy');
 });

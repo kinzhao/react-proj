@@ -4,7 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', function (req, res, next) {
-    res.render('admin-board');
+    res.render('item-2');
 });
 
 // React initial page load POST request
