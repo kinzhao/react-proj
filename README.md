@@ -1,4 +1,4 @@
-# Snack Box
+# React-proj
 
 npm install
 
