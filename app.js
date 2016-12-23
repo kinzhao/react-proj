@@ -63,7 +63,7 @@ app.use(function(req, res, next) {
 
 app.use('/login', login);
 app.use('/logout', logout);
-app.use('/home', home);
+app.use('/', home);
 app.use('/item-1', item1);
 app.use('/item-2', item2);
 app.use('/item-3', item3);
